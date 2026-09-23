@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanha Google Ads - Synadentix</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; padding: 20px; line-height: 1.5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        h1 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        h2 { font-size: 18px; font-weight: 600; color: #334155; margin-top: 30px; margin-bottom: 15px; background: #f1f5f9; padding: 10px; border-radius: 6px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+        .item:last-child { border-bottom: none; }
+        .text-content { flex: 1; padding-right: 20px; }
+        .original-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px; font-weight: 600; color: #0f172a; }
+        .translation { font-size: 12px; color: #64748b; margin-top: 4px; }
+        .controls { display: flex; align-items: center; gap: 12px; }
+        .counter { font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 4px; }
+        .counter.valid { background: #dcfce7; color: #166534; }
+        .counter.invalid { background: #fee2e2; color: #991b1b; }
+        .copy-btn { background: #ffffff; border: 1px solid #cbd5e1; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .copy-btn:hover { background: #f8fafc; border-color: #94a3b8; color: #0f172a; }
+        .copy-btn.copied { background: #10b981; border-color: #10b981; color: white; }
+        details { background: #f8fafc; padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
+        summary { font-weight: 600; cursor: pointer; color: #334155; }
+        .sitelink-group { margin-top: 10px; padding-left: 10px; border-left: 2px solid #cbd5e1; }
+        .url-box { margin-bottom: 15px; padding: 12px; background: #e0f2fe; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .url-text { font-family: monospace; color: #0369a1; word-break: break-all; }
+        .alert { background: #fcf3cf; border-left: 4px solid #f1c40f; padding: 15px; margin-bottom: 20px; font-size: 14px; border-radius: 6px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recursos Fundo de Funil: Synadentix</h1>
+        
+        <div class="alert">
+            <strong>Estratégia:</strong> Saúde Bucal / Dentes e Gengivas (Nutra3). Foco forte em <strong>escassez</strong>, <strong>preço/promoção</strong> (Save $780, Only $49/Bottle) e títulos genéricos sem o nome do produto para evitar brand bidding problems.
+        </div>
+
+        <p style="font-size: 14px; color: #64748b; margin-bottom: 30px;">
+            Benefícios Principais: Saúde Bucal (Dentes e Gengivas), $780 OFF, $49 Por Frasco, Frete Grátis EUA, 90 Dias de Garantia.
+        </p>
+
+        <!-- Bloco 1 -->
+        <h2>Títulos 1: Produto + [benefício] (Máx: 30)</h2>
+        <div id="titulos-1"></div>
+
+        <!-- Bloco 2 -->
+        <h2>Títulos 2: Produto posição aleatória (Máx: 30)</h2>
+        <div id="titulos-2"></div>
+
+        <!-- Bloco 3 -->
+        <h2>Títulos 3: Produto + benefício sem colchetes (Máx: 30)</h2>
+        <div id="titulos-3"></div>
+
+        <!-- Bloco 4 -->
+        <h2>Títulos 4: Sem nome do produto - Foco Preço/Escassez (Máx: 30)</h2>
+        <div id="titulos-4"></div>
+
+        <!-- Descrições -->
+        <h2>Descrições (Máx: 90)</h2>
+        <div id="descricoes"></div>
+
+        <!-- Sitelinks -->
+        <h2>Sitelinks (Frases: Máx 35, Título do grupo: Máx 25)</h2>
+        <div id="sitelinks"></div>
+
+        <!-- Frases em Destaque -->
+        <h2>Frases em Destaque / Callouts (Máx: 25)</h2>
+        <div id="callouts"></div>
+    </div>
+
+    <script>
+        const baseUrl = "https://officialbodycare.shop/Synadentix?utm_id={campaignid}&utm_source=google&utm_medium={adgroupid}&utm_campaign=nomeCampanha&utm_term={keyword}&utm_content={creative}&network={network}&device={device}&ftgid=ftgid_{gclid}_ftgid";
+
+        const data = {
+            t1: [
+                ["Synadentix [Save Up To $780]", "Synadentix [Economize Até $780]"],
+                ["Synadentix [Only $49/Bottle]", "Synadentix [Apenas $49/Frasco]"],
+                ["Synadentix [Official Site]", "Synadentix [Site Oficial]"],
+                ["Synadentix [Special Discount]", "Synadentix [Desconto Especial]"],
+                ["Synadentix [Limited Time Offer]", "Synadentix [Oferta por Tempo Limitado]"],
+                ["Synadentix [Strong Teeth & Gums]", "Synadentix [Dentes e Gengivas Fortes]"],
+                ["Synadentix [90-Day Guarantee]", "Synadentix [Garantia de 90 Dias]"],
+                ["Synadentix [Free US Shipping]", "Synadentix [Frete Grátis EUA]"],
+                ["Synadentix [Huge Sale Today]", "Synadentix [Grande Promoção Hoje]"],
+                ["Synadentix [While Supplies Last]", "Synadentix [Enquanto Durar o Estoque]"]
+            ],
+            t2: [
+                ["Try Synadentix Risk-Free Now", "Experimente Synadentix Sem Risco Agora"],
+                ["Claim Your Synadentix Deal", "Resgate Sua Oferta Synadentix"],
+                ["Save Big On Synadentix Today", "Economize Muito no Synadentix Hoje"],
+                ["Order Synadentix Official Site", "Peça Synadentix Site Oficial"],
+                ["Buy Synadentix With Huge Discount", "Compre Synadentix Com Grande Desconto"],
+                ["Synadentix: Only $49 Per Bottle", "Synadentix: Apenas $49 Por Frasco"],
+                ["Get Synadentix Before It's Gone", "Garanta Synadentix Antes Que Acabe"],
+                ["Special Pricing On Synadentix", "Preço Especial no Synadentix"],
+                ["Synadentix Flash Sale Ending", "Promoção Relâmpago Synadentix Acabando"],
+                ["Don't Miss Synadentix Discount", "Não Perca o Desconto Synadentix"]
+            ],
+            t3: [
+                ["Synadentix Official Website", "Synadentix Site Oficial"],
+                ["Synadentix Save Up To $780", "Synadentix Economize Até $780"],
+                ["Synadentix Just $49 A Bottle", "Synadentix Apenas $49 o Frasco"],
+                ["Synadentix Limited Stock Left", "Synadentix Estoque Limitado Restante"],
+                ["Synadentix Best Price Online", "Synadentix Melhor Preço Online"],
+                ["Synadentix Exclusive Discount", "Synadentix Desconto Exclusivo"],
+                ["Synadentix Free Shipping Deal", "Synadentix Oferta Frete Grátis"],
+                ["Synadentix Order Yours Today", "Synadentix Peça o Seu Hoje"],
+                ["Synadentix 90 Day Guarantee", "Synadentix Garantia de 90 Dias"],
+                ["Synadentix Huge Savings Today", "Synadentix Grande Economia Hoje"]
+            ],
+            t4: [
+                ["Claim Your $780 Discount", "Resgate Seu Desconto de $780"],
+                ["Only $49 Per Bottle Today", "Apenas $49 Por Frasco Hoje"],
+                ["Hurry, Limited Stock Left", "Corra, Estoque Limitado Restante"],
+                ["Massive Flash Sale Ending", "Enorme Promoção Relâmpago Acabando"],
+                ["Lock In Your Discount Now", "Garanta Seu Desconto Agora"],
+                ["Special Price While They Last", "Preço Especial Enquanto Durarem"],
+                ["Rebuild Your Oral Microbiome", "Reconstrua Seu Microbioma Oral"],
+                ["Top Teeth & Gums Formula", "Fórmula Top para Dentes e Gengivas"],
+                ["100% Risk-Free Guarantee", "Garantia 100% Livre de Risco"],
+                ["Final Hours: Big Discount", "Últimas Horas: Grande Desconto"],
+                ["Get Free US Shipping Today", "Ganhe Frete Grátis EUA Hoje"],
+                ["Act Fast: Stock Is Low", "Aja Rápido: O Estoque Está Baixo"],
+                ["Exclusive Online Offer Now", "Oferta Exclusiva Online Agora"],
+                ["Save Instantly On Your Order", "Economize Instantaneamente No Seu Pedido"],
+                ["Best Dental Supplement", "Melhor Suplemento Dental"]
+            ],
+            desc: [
+                ["Save up to $780 on Synadentix today! Only $49/bottle + Free US Shipping. Don't wait!", "Economize até $780 no Synadentix hoje! Apenas $49/frasco + Frete Grátis EUA. Não espere!"],
+                ["Hurry, limited stock available. Claim your exclusive Synadentix discount before it's gone.", "Corra, estoque limitado disponível. Resgate seu desconto exclusivo Synadentix antes que acabe."],
+                ["Rebuild your oral microbiome and support strong teeth & gums for just $49/bottle today.", "Reconstrua seu microbioma oral e apoie dentes e gengivas fortes por apenas $49/frasco hoje."],
+                ["Massive savings! Order Synadentix from the official site and lock in your $780 discount.", "Economia enorme! Peça Synadentix do site oficial e garanta seu desconto de $780."],
+                ["Don't miss out on our biggest sale of the year. Try Synadentix 100% risk-free today.", "Não perca nossa maior promoção do ano. Experimente Synadentix 100% sem risco hoje."],
+                ["Enhance your dental health with Synadentix. Take advantage of our special pricing now.", "Melhore sua saúde dental com Synadentix. Aproveite nosso preço especial agora."],
+                ["Order the 6-bottle package and pay only $49 each. Free shipping included! Secure yours.", "Peça o pacote de 6 frascos e pague apenas $49 cada. Frete grátis incluso! Garanta o seu."],
+                ["Time is running out! Secure your Synadentix supply with an exclusive discount today.", "O tempo está acabando! Garanta seu suprimento de Synadentix com um desconto exclusivo hoje."]
+            ],
+            sitelinks: [
+                {
+                    title: ["Save Up To $780 Today", "Economize Até $780 Hoje"],
+                    lines: [
+                        ["Claim your massive discount", "Resgate seu desconto enorme"],
+                        ["Hurry, limited time offer", "Corra, oferta por tempo limitado"]
+                    ]
+                },
+                {
+                    title: ["Only $49 Per Bottle", "Apenas $49 Por Frasco"],
+                    lines: [
+                        ["Lock in the best price", "Garanta o melhor preço"],
+                        ["Order the 6-bottle deal", "Peça a oferta de 6 frascos"]
+                    ]
+                },
+                {
+                    title: ["90-Day Guarantee", "Garantia de 90 Dias"],
+                    lines: [
+                        ["Try it 100% risk-free", "Experimente 100% sem risco"],
+                        ["Your satisfaction assured", "Sua satisfação garantida"]
+                    ]
+                },
+                {
+                    title: ["Official Website", "Site Oficial"],
+                    lines: [
+                        ["Order directly from us", "Peça diretamente de nós"],
+                        ["100% authentic formula", "Fórmula 100% autêntica"]
+                    ]
+                },
+                {
+                    title: ["Free US Shipping", "Frete Grátis EUA"],
+                    lines: [
+                        ["Fast and free delivery", "Entrega rápida e grátis"],
+                        ["Ships straight to your door", "Envia direto para sua porta"]
+                    ]
+                },
+                {
+                    title: ["Secure Order", "Pedido Seguro"],
+                    lines: [
+                        ["100% secure checkout", "Checkout 100% seguro"],
+                        ["Your privacy is protected", "Sua privacidade é protegida"]
+                    ]
+                },
+                {
+                    title: ["Limited Time Offer", "Oferta Tempo Limitado"],
+                    lines: [
+                        ["Prices going up soon", "Preços subirão em breve"],
+                        ["Don't miss this huge sale", "Não perca essa promoção"]
+                    ]
+                },
+                {
+                    title: ["100% Risk-Free", "100% Sem Risco"],
+                    lines: [
+                        ["Money back guarantee", "Garantia de devolução"],
+                        ["Order with confidence", "Peça com confiança"]
+                    ]
+                }
+            ],
+            callouts: [
+                ["Save Up To $780", "Economize Até $780"],
+                ["Only $49/Bottle", "Apenas $49/Frasco"],
+                ["Limited Stock", "Estoque Limitado"],
+                ["Free US Shipping", "Frete Grátis EUA"],
+                ["90-Day Guarantee", "Garantia de 90 Dias"],
+                ["100% Risk-Free", "100% Sem Risco"],
+                ["Official Website", "Site Oficial"],
+                ["Advanced Formula", "Fórmula Avançada"],
+                ["Order Online Now", "Peça Online Agora"],
+                ["Special Pricing", "Preço Especial"]
+            ]
+        };
+
+        function createItem(en, pt, limit) {
+            const count = en.length;
+            const valid = count <= limit;
+            
+            return `
+                <div class="item">
+                    <div class="text-content">
+                        <div class="original-text">${en}</div>
+                        <div class="translation">${pt}</div>
+                    </div>
+                    <div class="controls">
+                        <span class="counter ${valid ? 'valid' : 'invalid'}">${count}/${limit}</span>
+                        <button class="copy-btn" onclick="copyText(this, '${en.replace(/'/g, "\\'")}')">Copiar</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function copyText(btn, text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                const originalText = btn.innerText;
+                btn.innerText = 'Copiado!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar', err);
+            }
+        }
+
+        // URL Base Element
+        const container = document.querySelector('.container');
+        const urlHtml = `
+            <h2>URL Base (Google Ads)</h2>
+            <div class="url-box">
+                <span class="url-text">${baseUrl}</span>
+                <button class="copy-btn" onclick="copyText(this, '${baseUrl}')">Copiar URL</button>
+            </div>
+        `;
+        document.querySelector('h1').insertAdjacentHTML('afterend', urlHtml);
+
+        // Renderizar Títulos
+        document.getElementById('titulos-1').innerHTML = data.t1.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-2').innerHTML = data.t2.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-3').innerHTML = data.t3.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-4').innerHTML = data.t4.map(t => createItem(t[0], t[1], 30)).join('');
+
+        // Renderizar Descrições
+        document.getElementById('descricoes').innerHTML = data.desc.map(d => createItem(d[0], d[1], 90)).join('');
+
+        // Renderizar Sitelinks
+        document.getElementById('sitelinks').innerHTML = data.sitelinks.map((s, idx) => {
+            const sitelinkUrl = baseUrl + "&sitelink=" + (idx + 1);
+            return `
+            <details>
+                <summary>${s.title[0]} (${s.title[0].length}/25) - ${s.title[1]}</summary>
+                <div class="sitelink-group">
+                    <div class="url-box" style="margin-top: 10px; margin-bottom: 15px;">
+                        <span class="url-text">${sitelinkUrl}</span>
+                        <button class="copy-btn" onclick="copyText(this, '${sitelinkUrl}')">Copiar Link</button>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Título do Sitelink:</strong>
+                        ${createItem(s.title[0], s.title[1], 25)}
+                    </div>
+                    <strong>Linha de Descrição 1:</strong>
+                    ${createItem(s.lines[0][0], s.lines[0][1], 35)}
+                    <strong>Linha de Descrição 2:</strong>
+                    ${createItem(s.lines[1][0], s.lines[1][1], 35)}
+                </div>
+            </details>
+            `;
+        }).join('');
+
+        // Renderizar Callouts
+        document.getElementById('callouts').innerHTML = data.callouts.map(c => createItem(c[0], c[1], 25)).join('');
+    </script>
+</body>
+</html>
