@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanha Google Ads - Erexafil</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; padding: 20px; line-height: 1.5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        h1 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        h2 { font-size: 18px; font-weight: 600; color: #334155; margin-top: 30px; margin-bottom: 15px; background: #f1f5f9; padding: 10px; border-radius: 6px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+        .item:last-child { border-bottom: none; }
+        .text-content { flex: 1; padding-right: 20px; }
+        .original-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px; font-weight: 600; color: #0f172a; }
+        .translation { font-size: 12px; color: #64748b; margin-top: 4px; }
+        .controls { display: flex; align-items: center; gap: 12px; }
+        .counter { font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 4px; }
+        .counter.valid { background: #dcfce7; color: #166534; }
+        .counter.invalid { background: #fee2e2; color: #991b1b; }
+        .copy-btn { background: #ffffff; border: 1px solid #cbd5e1; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .copy-btn:hover { background: #f8fafc; border-color: #94a3b8; color: #0f172a; }
+        .copy-btn.copied { background: #10b981; border-color: #10b981; color: white; }
+        details { background: #f8fafc; padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
+        summary { font-weight: 600; cursor: pointer; color: #334155; }
+        .sitelink-group { margin-top: 10px; padding-left: 10px; border-left: 2px solid #cbd5e1; }
+        .url-box { margin-bottom: 15px; padding: 12px; background: #e0f2fe; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .url-text { font-family: monospace; color: #0369a1; word-break: break-all; }
+        .alert { background: #fcf3cf; border-left: 4px solid #f1c40f; padding: 15px; margin-bottom: 20px; font-size: 14px; border-radius: 6px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recursos Fundo de Funil: Erexafil</h1>
+        
+        <div class="alert">
+            <strong>Estratégia:</strong> Saúde Masculina (Nutra3). Foco forte em <strong>escassez</strong> e <strong>preço/promoção</strong> (Save $780, Only $49/Bottle) e muita variação de títulos sem o nome do produto.
+        </div>
+
+        <p style="font-size: 14px; color: #64748b; margin-bottom: 30px;">
+            Benefícios Principais: $780 OFF, $49 Por Frasco, Frete Grátis EUA, 60 Dias de Garantia.
+        </p>
+
+        <!-- Bloco 1 -->
+        <h2>Títulos 1: Produto + [benefício] (Máx: 30)</h2>
+        <div id="titulos-1"></div>
+
+        <!-- Bloco 2 -->
+        <h2>Títulos 2: Produto posição aleatória (Máx: 30)</h2>
+        <div id="titulos-2"></div>
+
+        <!-- Bloco 3 -->
+        <h2>Títulos 3: Produto + benefício sem colchetes (Máx: 30)</h2>
+        <div id="titulos-3"></div>
+
+        <!-- Bloco 4 -->
+        <h2>Títulos 4: Sem nome do produto - Foco Preço/Escassez (Máx: 30)</h2>
+        <div id="titulos-4"></div>
+
+        <!-- Descrições -->
+        <h2>Descrições (Máx: 90)</h2>
+        <div id="descricoes"></div>
+
+        <!-- Sitelinks -->
+        <h2>Sitelinks (Frases: Máx 35, Título do grupo: Máx 25)</h2>
+        <div id="sitelinks"></div>
+
+        <!-- Frases em Destaque -->
+        <h2>Frases em Destaque / Callouts (Máx: 25)</h2>
+        <div id="callouts"></div>
+    </div>
+
+    <script>
+        const baseUrl = "https://officialbodycare.shop/Erexafil?utm_id={campaignid}&utm_source=google&utm_medium={adgroupid}&utm_campaign=nomeCampanha&utm_term={keyword}&utm_content={creative}&network={network}&device={device}&ftgid=ftgid_{gclid}_ftgid";
+
+        const data = {
+            t1: [
+                ["Erexafil [Save Up To $780]", "Erexafil [Economize Até $780]"],
+                ["Erexafil [Only $49/Bottle]", "Erexafil [Apenas $49/Frasco]"],
+                ["Erexafil [Official Site]", "Erexafil [Site Oficial]"],
+                ["Erexafil [Special Discount]", "Erexafil [Desconto Especial]"],
+                ["Erexafil [Limited Time Offer]", "Erexafil [Oferta por Tempo Limitado]"],
+                ["Erexafil [Get 60% Off Today]", "Erexafil [Ganhe 60% Off Hoje]"],
+                ["Erexafil [60-Day Guarantee]", "Erexafil [Garantia de 60 Dias]"],
+                ["Erexafil [Free US Shipping]", "Erexafil [Frete Grátis EUA]"],
+                ["Erexafil [Huge Sale Today]", "Erexafil [Grande Promoção Hoje]"],
+                ["Erexafil [While Supplies Last]", "Erexafil [Enquanto Durar o Estoque]"]
+            ],
+            t2: [
+                ["Try Erexafil Risk-Free Now", "Experimente Erexafil Sem Risco Agora"],
+                ["Claim Your Erexafil Deal", "Resgate Sua Oferta Erexafil"],
+                ["Save Big On Erexafil Today", "Economize Muito no Erexafil Hoje"],
+                ["Order Erexafil Official Site", "Peça Erexafil Site Oficial"],
+                ["Buy Erexafil With Huge Discount", "Compre Erexafil Com Grande Desconto"],
+                ["Erexafil: Only $49 Per Bottle", "Erexafil: Apenas $49 Por Frasco"],
+                ["Get Erexafil Before It's Gone", "Garanta Erexafil Antes Que Acabe"],
+                ["Special Pricing On Erexafil", "Preço Especial no Erexafil"],
+                ["Erexafil Flash Sale Ending", "Promoção Relâmpago Erexafil Acabando"],
+                ["Don't Miss Erexafil Discount", "Não Perca o Desconto Erexafil"]
+            ],
+            t3: [
+                ["Erexafil Official Website", "Erexafil Site Oficial"],
+                ["Erexafil Save Up To $780", "Erexafil Economize Até $780"],
+                ["Erexafil Just $49 A Bottle", "Erexafil Apenas $49 o Frasco"],
+                ["Erexafil Limited Stock Left", "Erexafil Estoque Limitado Restante"],
+                ["Erexafil Best Price Online", "Erexafil Melhor Preço Online"],
+                ["Erexafil Exclusive Discount", "Erexafil Desconto Exclusivo"],
+                ["Erexafil Free Shipping Deal", "Erexafil Oferta Frete Grátis"],
+                ["Erexafil Order Yours Today", "Erexafil Peça o Seu Hoje"],
+                ["Erexafil 60 Day Guarantee", "Erexafil Garantia de 60 Dias"],
+                ["Erexafil Huge Savings Today", "Erexafil Grande Economia Hoje"]
+            ],
+            t4: [
+                ["Claim Your $780 Discount", "Resgate Seu Desconto de $780"],
+                ["Only $49 Per Bottle Today", "Apenas $49 Por Frasco Hoje"],
+                ["Hurry, Limited Stock Left", "Corra, Estoque Limitado Restante"],
+                ["Massive Flash Sale Ending", "Enorme Promoção Relâmpago Acabando"],
+                ["Lock In Your Discount Now", "Garanta Seu Desconto Agora"],
+                ["Special Price While They Last", "Preço Especial Enquanto Durarem"],
+                ["Don't Miss This Huge Deal", "Não Perca Esta Enorme Oferta"],
+                ["Order Now & Save Big Time", "Peça Agora e Economize Muito"],
+                ["100% Risk-Free Guarantee", "Garantia 100% Livre de Risco"],
+                ["Final Hours: Big Discount", "Últimas Horas: Grande Desconto"],
+                ["Get Free US Shipping Today", "Ganhe Frete Grátis EUA Hoje"],
+                ["Act Fast: Stock Is Low", "Aja Rápido: O Estoque Está Baixo"],
+                ["Exclusive Online Offer Now", "Oferta Exclusiva Online Agora"],
+                ["Save Instantly On Your Order", "Economize Instantaneamente No Seu Pedido"],
+                ["Top Men's Support Formula", "Principal Fórmula de Suporte Masculino"]
+            ],
+            desc: [
+                ["Save up to $780 on Erexafil today! Only $49/bottle + Free US Shipping. Don't wait!", "Economize até $780 no Erexafil hoje! Apenas $49/frasco + Frete Grátis EUA. Não espere!"],
+                ["Hurry, limited stock available. Claim your exclusive Erexafil discount before it's gone.", "Corra, estoque limitado disponível. Resgate seu desconto exclusivo Erexafil antes que acabe."],
+                ["Get the advanced men's support formula for just $49/bottle. Backed by a 60-day guarantee.", "Adquira a fórmula avançada de suporte masculino por apenas $49/frasco. Com garantia de 60 dias."],
+                ["Massive savings! Order Erexafil from the official site and lock in your $780 discount now.", "Economia enorme! Peça Erexafil do site oficial e garanta seu desconto de $780 agora."],
+                ["Don't miss out on our biggest sale of the year. Try Erexafil 100% risk-free today.", "Não perca nossa maior promoção do ano. Experimente Erexafil 100% sem risco hoje."],
+                ["Enhance your vitality with Erexafil. Take advantage of our special pricing while supplies last.", "Melhore sua vitalidade com Erexafil. Aproveite nosso preço especial enquanto durar o estoque."],
+                ["Order the 6-bottle package and pay only $49 each. Free shipping included! Secure yours.", "Peça o pacote de 6 frascos e pague apenas $49 cada. Frete grátis incluso! Garanta o seu."],
+                ["Time is running out! Secure your Erexafil supply with an exclusive discount and free shipping.", "O tempo está acabando! Garanta seu suprimento de Erexafil com um desconto exclusivo e frete grátis."]
+            ],
+            sitelinks: [
+                {
+                    title: ["Save Up To $780 Today", "Economize Até $780 Hoje"],
+                    lines: [
+                        ["Claim your massive discount", "Resgate seu desconto enorme"],
+                        ["Hurry, limited time offer", "Corra, oferta por tempo limitado"]
+                    ]
+                },
+                {
+                    title: ["Only $49 Per Bottle", "Apenas $49 Por Frasco"],
+                    lines: [
+                        ["Lock in the best price", "Garanta o melhor preço"],
+                        ["Order the 6-bottle deal", "Peça a oferta de 6 frascos"]
+                    ]
+                },
+                {
+                    title: ["60-Day Guarantee", "Garantia de 60 Dias"],
+                    lines: [
+                        ["Try it 100% risk-free", "Experimente 100% sem risco"],
+                        ["Your satisfaction assured", "Sua satisfação garantida"]
+                    ]
+                },
+                {
+                    title: ["Official Website", "Site Oficial"],
+                    lines: [
+                        ["Order directly from us", "Peça diretamente de nós"],
+                        ["100% authentic formula", "Fórmula 100% autêntica"]
+                    ]
+                }
+            ],
+            callouts: [
+                ["Save Up To $780", "Economize Até $780"],
+                ["Only $49/Bottle", "Apenas $49/Frasco"],
+                ["Limited Stock", "Estoque Limitado"],
+                ["Free US Shipping", "Frete Grátis EUA"],
+                ["60-Day Guarantee", "Garantia de 60 Dias"],
+                ["100% Risk-Free", "100% Sem Risco"],
+                ["Official Website", "Site Oficial"],
+                ["Advanced Formula", "Fórmula Avançada"],
+                ["Order Online Now", "Peça Online Agora"],
+                ["Special Pricing", "Preço Especial"]
+            ]
+        };
+
+        function createItem(en, pt, limit) {
+            const count = en.length;
+            const valid = count <= limit;
+            
+            return `
+                <div class="item">
+                    <div class="text-content">
+                        <div class="original-text">${en}</div>
+                        <div class="translation">${pt}</div>
+                    </div>
+                    <div class="controls">
+                        <span class="counter ${valid ? 'valid' : 'invalid'}">${count}/${limit}</span>
+                        <button class="copy-btn" onclick="copyText(this, '${en.replace(/'/g, "\\'")}')">Copiar</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function copyText(btn, text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                const originalText = btn.innerText;
+                btn.innerText = 'Copiado!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar', err);
+            }
+        }
+
+        // URL Base Element
+        const container = document.querySelector('.container');
+        const urlHtml = `
+            <h2>URL Base (Google Ads)</h2>
+            <div class="url-box">
+                <span class="url-text">${baseUrl}</span>
+                <button class="copy-btn" onclick="copyText(this, '${baseUrl}')">Copiar URL</button>
+            </div>
+        `;
+        document.querySelector('h1').insertAdjacentHTML('afterend', urlHtml);
+
+        // Renderizar Títulos
+        document.getElementById('titulos-1').innerHTML = data.t1.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-2').innerHTML = data.t2.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-3').innerHTML = data.t3.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-4').innerHTML = data.t4.map(t => createItem(t[0], t[1], 30)).join('');
+
+        // Renderizar Descrições
+        document.getElementById('descricoes').innerHTML = data.desc.map(d => createItem(d[0], d[1], 90)).join('');
+
+        // Renderizar Sitelinks
+        document.getElementById('sitelinks').innerHTML = data.sitelinks.map(s => `
+            <details>
+                <summary>${s.title[0]} (${s.title[0].length}/25) - ${s.title[1]}</summary>
+                <div class="sitelink-group">
+                    <div style="margin-bottom: 15px;">
+                        <strong>Título do Sitelink:</strong>
+                        ${createItem(s.title[0], s.title[1], 25)}
+                    </div>
+                    <strong>Linha de Descrição 1:</strong>
+                    ${createItem(s.lines[0][0], s.lines[0][1], 35)}
+                    <strong>Linha de Descrição 2:</strong>
+                    ${createItem(s.lines[1][0], s.lines[1][1], 35)}
+                    <div style="margin-top: 10px; font-size: 12px; color: #64748b;">
+                        <em>Dica: Use a URL base acima e adicione &sitelink=1, =2, etc., no final.</em>
+                    </div>
+                </div>
+            </details>
+        `).join('');
+
+        // Renderizar Callouts
+        document.getElementById('callouts').innerHTML = data.callouts.map(c => createItem(c[0], c[1], 25)).join('');
+    </script>
+</body>
+</html>
