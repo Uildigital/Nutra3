@@ -165,6 +165,34 @@
                         ["Order directly from us", "Peça diretamente de nós"],
                         ["100% authentic formula", "Fórmula 100% autêntica"]
                     ]
+                },
+                {
+                    title: ["Free US Shipping", "Frete Grátis EUA"],
+                    lines: [
+                        ["Fast and free delivery", "Entrega rápida e grátis"],
+                        ["Ships straight to your door", "Envia direto para sua porta"]
+                    ]
+                },
+                {
+                    title: ["Secure Order", "Pedido Seguro"],
+                    lines: [
+                        ["100% secure checkout", "Checkout 100% seguro"],
+                        ["Your privacy is protected", "Sua privacidade é protegida"]
+                    ]
+                },
+                {
+                    title: ["Limited Time Offer", "Oferta Tempo Limitado"],
+                    lines: [
+                        ["Prices going up soon", "Preços subirão em breve"],
+                        ["Don't miss this huge sale", "Não perca essa promoção"]
+                    ]
+                },
+                {
+                    title: ["100% Risk-Free", "100% Sem Risco"],
+                    lines: [
+                        ["Money back guarantee", "Garantia de devolução"],
+                        ["Order with confidence", "Peça com confiança"]
+                    ]
                 }
             ],
             callouts: [
@@ -235,10 +263,16 @@
         document.getElementById('descricoes').innerHTML = data.desc.map(d => createItem(d[0], d[1], 90)).join('');
 
         // Renderizar Sitelinks
-        document.getElementById('sitelinks').innerHTML = data.sitelinks.map(s => `
+        document.getElementById('sitelinks').innerHTML = data.sitelinks.map((s, idx) => {
+            const sitelinkUrl = baseUrl + "&sitelink=" + (idx + 1);
+            return `
             <details>
                 <summary>${s.title[0]} (${s.title[0].length}/25) - ${s.title[1]}</summary>
                 <div class="sitelink-group">
+                    <div class="url-box" style="margin-top: 10px; margin-bottom: 15px;">
+                        <span class="url-text">${sitelinkUrl}</span>
+                        <button class="copy-btn" onclick="copyText(this, '${sitelinkUrl}')">Copiar Link</button>
+                    </div>
                     <div style="margin-bottom: 15px;">
                         <strong>Título do Sitelink:</strong>
                         ${createItem(s.title[0], s.title[1], 25)}
@@ -247,12 +281,10 @@
                     ${createItem(s.lines[0][0], s.lines[0][1], 35)}
                     <strong>Linha de Descrição 2:</strong>
                     ${createItem(s.lines[1][0], s.lines[1][1], 35)}
-                    <div style="margin-top: 10px; font-size: 12px; color: #64748b;">
-                        <em>Dica: Use a URL base acima e adicione &sitelink=1, =2, etc., no final.</em>
-                    </div>
                 </div>
             </details>
-        `).join('');
+            `;
+        }).join('');
 
         // Renderizar Callouts
         document.getElementById('callouts').innerHTML = data.callouts.map(c => createItem(c[0], c[1], 25)).join('');
