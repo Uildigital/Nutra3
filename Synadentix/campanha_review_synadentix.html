@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanha Google Ads - Review Synadentix</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; padding: 20px; line-height: 1.5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        h1 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        h2 { font-size: 18px; font-weight: 600; color: #334155; margin-top: 30px; margin-bottom: 15px; background: #f1f5f9; padding: 10px; border-radius: 6px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+        .item:last-child { border-bottom: none; }
+        .text-content { flex: 1; padding-right: 20px; }
+        .original-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px; font-weight: 600; color: #0f172a; }
+        .translation { font-size: 12px; color: #64748b; margin-top: 4px; }
+        .controls { display: flex; align-items: center; gap: 12px; }
+        .counter { font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 4px; }
+        .counter.valid { background: #dcfce7; color: #166534; }
+        .counter.invalid { background: #fee2e2; color: #991b1b; }
+        .copy-btn { background: #ffffff; border: 1px solid #cbd5e1; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .copy-btn:hover { background: #f8fafc; border-color: #94a3b8; color: #0f172a; }
+        .copy-btn.copied { background: #10b981; border-color: #10b981; color: white; }
+        details { background: #f8fafc; padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
+        summary { font-weight: 600; cursor: pointer; color: #334155; }
+        .sitelink-group { margin-top: 10px; padding-left: 10px; border-left: 2px solid #cbd5e1; }
+        .url-box { margin-bottom: 15px; padding: 12px; background: #e0f2fe; border-radius: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .url-text { font-family: monospace; color: #0369a1; word-break: break-all; }
+        .alert { background: #fcf3cf; border-left: 4px solid #f1c40f; padding: 15px; margin-bottom: 20px; font-size: 14px; border-radius: 6px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recursos Fundo de Funil: Review Synadentix</h1>
+        
+        <div class="alert">
+            <strong>Estratégia:</strong> Saúde Bucal (Review / Advertorial). Foco forte em <strong>honestidade</strong>, <strong>análise clínica</strong> e títulos com "Scam" e "Does it work?" para afastar a objeção de falsificação e pegar a intenção de quem pesquisa por análises da pastilha.
+        </div>
+
+        <p style="font-size: 14px; color: #64748b; margin-bottom: 30px;">
+            Benefícios Principais: Análise Imparcial, Prova Social, Ingredientes e Respostas de FAQ (Efeitos colaterais, tempo de resultado).
+        </p>
+
+        <!-- Bloco 1 -->
+        <h2>Títulos 1: Foco em Review e Análise (Máx: 30)</h2>
+        <div id="titulos-1"></div>
+
+        <!-- Bloco 2 -->
+        <h2>Títulos 2: Foco em Alerta e "Scam" (Máx: 30)</h2>
+        <div id="titulos-2"></div>
+
+        <!-- Bloco 3 -->
+        <h2>Títulos 3: Benefícios e Ingredientes (Máx: 30)</h2>
+        <div id="titulos-3"></div>
+
+        <!-- Bloco 4 -->
+        <h2>Títulos 4: Sem nome do produto - Gatilho de Atenção (Máx: 30)</h2>
+        <div id="titulos-4"></div>
+
+        <!-- Descrições -->
+        <h2>Descrições (Máx: 90)</h2>
+        <div id="descricoes"></div>
+
+        <!-- Sitelinks -->
+        <h2>Sitelinks (Frases: Máx 35, Título do grupo: Máx 25)</h2>
+        <div id="sitelinks"></div>
+
+        <!-- Frases em Destaque -->
+        <h2>Frases em Destaque / Callouts (Máx: 25)</h2>
+        <div id="callouts"></div>
+    </div>
+
+    <script>
+        const baseUrl = "https://healthytodaystore.com/Synadentix?utm_id={campaignid}&utm_source=google&utm_medium={adgroupid}&utm_campaign=nomeCampanha&utm_term={keyword}&utm_content={creative}&network={network}&device={device}&ftgid=ftgid_{gclid}_ftgid";
+        const offerUrl = "https://maxwebleads.com/11915/4794/3/?";
+
+        const data = {
+            t1: [
+                ["Synadentix Official Review", "Análise Oficial Synadentix"],
+                ["Does Synadentix Work?", "Synadentix Funciona?"],
+                ["Synadentix Clinical Review", "Synadentix Análise Clínica"],
+                ["Synadentix Expert Analysis", "Synadentix Análise de Expert"],
+                ["Synadentix Dental Review", "Synadentix Análise Dental"],
+                ["Synadentix Honest Review", "Análise Honesta Synadentix"],
+                ["Synadentix Testimonials", "Depoimentos Synadentix"],
+                ["Synadentix Before & After", "Antes e Depois Synadentix"],
+                ["Synadentix Facts & Details", "Fatos e Detalhes Synadentix"],
+                ["Synadentix Real Results", "Resultados Reais Synadentix"]
+            ],
+            t2: [
+                ["Synadentix Independent View", "Visão Independente Synadentix"],
+                ["Synadentix Full Evaluation", "Avaliação Completa Synadentix"],
+                ["Read Before Purchasing", "Leia Antes De Comprar"],
+                ["Complete Clinical Review", "Revisão Clínica Completa"],
+                ["Any Side Effects?", "Algum Efeito Colateral?"],
+                ["Official Synadentix Link", "Link Oficial Synadentix"],
+                ["Synadentix Safe To Use?", "Synadentix Seguro de Usar?"],
+                ["Synadentix Deep Analysis", "Análise Profunda Synadentix"],
+                ["Pros & Cons Analysis", "Análise de Prós e Contras"],
+                ["Does It Rebuild Teeth?", "Reconstrói Dentes?"]
+            ],
+            t3: [
+                ["Synadentix Ingredients", "Synadentix Ingredientes"],
+                ["Synadentix Night Routine", "Synadentix Rotina Noturna"],
+                ["Synadentix Enamel Repair", "Synadentix Reparo de Esmalte"],
+                ["Synadentix Gum Health", "Synadentix Saúde Gengival"],
+                ["Synadentix 90-Day Guarantee", "Synadentix Garantia 90 Dias"],
+                ["Synadentix Best Price", "Synadentix Melhor Preço"],
+                ["Synadentix Official Website", "Synadentix Site Oficial"],
+                ["Synadentix Exclusive Offer", "Synadentix Oferta Exclusiva"],
+                ["Synadentix Dental Protocol", "Protocolo Dental Synadentix"],
+                ["Synadentix Check Prices", "Confira Preços Synadentix"]
+            ],
+            t4: [
+                ["Stop Gum Bleeding Today", "Pare Sangramento Gengival"],
+                ["Saliva Activated Formula", "Fórmula Ativada Na Saliva"],
+                ["Protect Your Teeth Daily", "Proteja Seus Dentes Diariamente"],
+                ["Doctor Recommended Chew", "Pastilha Recomendada por Médico"],
+                ["The Best Dental Chew", "A Melhor Pastilha Dental"],
+                ["Rebuild Oral Microbiome", "Reconstrua Microbioma Oral"],
+                ["Natural Enamel Repair", "Reparo Natural de Esmalte"],
+                ["Stop Sensitive Teeth", "Pare Dentes Sensíveis"],
+                ["Advanced Dental Health", "Saúde Dental Avançada"],
+                ["100% Natural Ingredients", "Ingredientes 100% Naturais"]
+            ],
+            desc: [
+                ["Does Synadentix really work? Read our clinical analysis before buying the chewable tablet.", "O Synadentix realmente funciona? Leia nossa análise clínica antes de comprar a pastilha."],
+                ["We analyzed the Synadentix formula for enamel and gums. See our final verdict.", "Analisamos a fórmula do Synadentix para esmalte e gengivas. Veja nosso veredito final."],
+                ["Are there side effects? Read our independent analysis on Synadentix today.", "Tem efeitos colaterais? Leia nossa análise independente sobre o Synadentix hoje."],
+                ["Stop bleeding gums and sensitive teeth. Read real customer reviews and results now.", "Pare sangramentos e dentes sensíveis. Leia avaliações e resultados de clientes reais."],
+                ["Learn how the saliva-activated formula rebuilds your oral microbiome overnight.", "Saiba como a fórmula ativada pela saliva reconstrói seu microbioma bucal durante a noite."],
+                ["Read our complete evaluation of Synadentix. See the clinical proof before deciding.", "Leia nossa avaliação completa do Synadentix. Veja a prova clínica antes de decidir."]
+            ],
+            sitelinks: [
+                {
+                    title: ["Read Full Review", "Leia a Análise Completa"],
+                    hash: "#review",
+                    lines: [
+                        ["Discover the clinical truth.", "Descubra a verdade clínica."],
+                        ["See if Synadentix works.", "Veja se o Synadentix funciona."]
+                    ]
+                },
+                {
+                    title: ["See All Ingredients", "Veja os Ingredientes"],
+                    hash: "#ingredients",
+                    lines: [
+                        ["100% natural formula.", "Fórmula 100% natural."],
+                        ["Backed by real science.", "Apoiado por ciência real."]
+                    ]
+                },
+                {
+                    title: ["Any Side Effects?", "Algum Efeito Colateral?"],
+                    hash: "#faq",
+                    lines: [
+                        ["Read our safety report.", "Leia nosso relatório de segurança."],
+                        ["What you need to know.", "O que você precisa saber."]
+                    ]
+                },
+                {
+                    title: ["90-Day Guarantee", "Garantia de 90 Dias"],
+                    hash: "#guarantee",
+                    lines: [
+                        ["Risk-free clinical trial.", "Teste clínico sem riscos."],
+                        ["Read the refund policy.", "Leia a política de reembolso."]
+                    ]
+                },
+                {
+                    title: ["Official Link Verified", "Link Oficial Verificado"],
+                    hash: "#alert",
+                    lines: [
+                        ["Check the official website.", "Verifique o site oficial."],
+                        ["Only use the official link.", "Use apenas o link oficial."]
+                    ]
+                },
+                {
+                    title: ["Real Testimonials", "Depoimentos Reais"],
+                    hash: "#reviews",
+                    lines: [
+                        ["See before & after results.", "Veja resultados antes e depois."],
+                        ["Real stories from users.", "Histórias reais de usuários."]
+                    ]
+                },
+                {
+                    title: ["How To Use It?", "Como Usar?"],
+                    hash: "#usage",
+                    lines: [
+                        ["The nightly dental protocol.", "O protocolo dental noturno."],
+                        ["Just one chewable tablet.", "Apenas uma pastilha mastigável."]
+                    ]
+                },
+                {
+                    title: ["Official Discount", "Desconto Oficial"],
+                    hash: "OFFER",
+                    lines: [
+                        ["Claim your bottles today.", "Resgate seus frascos hoje."],
+                        ["Safe & encrypted checkout.", "Checkout seguro e criptografado."]
+                    ]
+                }
+            ],
+            callouts: [
+                ["Clinical Analysis 2026", "Análise Clínica 2026"],
+                ["Verified Customer Reviews", "Reviews Verificados"],
+                ["90-Day Money Back", "90 Dias de Reembolso"],
+                ["Saliva-Activated Formula", "Fórmula Ativada na Saliva"],
+                ["Stop Gum Bleeding", "Pare Sangramento Gengival"],
+                ["Rebuild Tooth Enamel", "Reconstrua o Esmalte"],
+                ["Pre-Purchase Evaluation", "Avaliação Pré-Compra"],
+                ["100% Natural Ingredients", "Ingredientes Naturais"],
+                ["Independent Review", "Análise Independente"],
+                ["Clinical Evaluation", "Avaliação Clínica"]
+            ]
+        };
+
+        function createItem(en, pt, limit) {
+            const count = en.length;
+            const valid = count <= limit;
+            
+            return `
+                <div class="item">
+                    <div class="text-content">
+                        <div class="original-text">${en}</div>
+                        <div class="translation">${pt}</div>
+                    </div>
+                    <div class="controls">
+                        <span class="counter ${valid ? 'valid' : 'invalid'}">${count}/${limit}</span>
+                        <button class="copy-btn" onclick="copyText(this, '${en.replace(/'/g, "\\'")}')">Copiar</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function copyText(btn, text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                const originalText = btn.innerText;
+                btn.innerText = 'Copiado!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar', err);
+            }
+        }
+
+        // URL Base Element
+        const container = document.querySelector('.container');
+        const urlHtml = `
+            <h2>URL Final da Campanha (Review)</h2>
+            <div class="url-box">
+                <span class="url-text">${baseUrl}</span>
+                <button class="copy-btn" onclick="copyText(this, '${baseUrl}')">Copiar URL</button>
+            </div>
+            <h2>URL Final Oferta Direta (Sitelink Oficial)</h2>
+            <div class="url-box" style="background:#f0fdf4;">
+                <span class="url-text">${offerUrl}</span>
+                <button class="copy-btn" onclick="copyText(this, '${offerUrl}')">Copiar URL</button>
+            </div>
+        `;
+        document.querySelector('h1').insertAdjacentHTML('afterend', urlHtml);
+
+        // Renderizar Títulos
+        document.getElementById('titulos-1').innerHTML = data.t1.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-2').innerHTML = data.t2.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-3').innerHTML = data.t3.map(t => createItem(t[0], t[1], 30)).join('');
+        document.getElementById('titulos-4').innerHTML = data.t4.map(t => createItem(t[0], t[1], 30)).join('');
+
+        // Renderizar Descrições
+        document.getElementById('descricoes').innerHTML = data.desc.map(d => createItem(d[0], d[1], 90)).join('');
+
+        // Renderizar Sitelinks
+        document.getElementById('sitelinks').innerHTML = data.sitelinks.map((s) => {
+            const sitelinkUrl = s.hash === "OFFER" ? offerUrl : baseUrl + s.hash;
+            return `
+            <details>
+                <summary>${s.title[0]} (${s.title[0].length}/25) - ${s.title[1]}</summary>
+                <div class="sitelink-group">
+                    <div class="url-box" style="margin-top: 10px; margin-bottom: 15px; ${s.hash === 'OFFER' ? 'background:#f0fdf4;' : ''}">
+                        <span class="url-text">${sitelinkUrl}</span>
+                        <button class="copy-btn" onclick="copyText(this, '${sitelinkUrl}')">Copiar Link</button>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Título do Sitelink:</strong>
+                        ${createItem(s.title[0], s.title[1], 25)}
+                    </div>
+                    <strong>Linha de Descrição 1:</strong>
+                    ${createItem(s.lines[0][0], s.lines[0][1], 35)}
+                    <strong>Linha de Descrição 2:</strong>
+                    ${createItem(s.lines[1][0], s.lines[1][1], 35)}
+                </div>
+            </details>
+            `;
+        }).join('');
+
+        // Renderizar Callouts
+        document.getElementById('callouts').innerHTML = data.callouts.map(c => createItem(c[0], c[1], 25)).join('');
+    </script>
+</body>
+</html>
